@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filipino Tech VA Guide 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            padding: 1%;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            padding: 15px 1%;
+            border-radius: 12px;
+            margin-bottom: 1%;
+            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3);
+        }
+
+        h1 {
+            font-size: 1.3em;
+            font-weight: 600;
+            text-align: center;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 0.85em;
+            color: #cbd5e1;
+            margin-top: 5px;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 1%;
+            margin-bottom: 1%;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .nav-tabs::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .nav-tabs::-webkit-scrollbar-track {
+            background: #1e293b;
+            border-radius: 10px;
+        }
+
+        .nav-tabs::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 10px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            min-width: 100px;
+            padding: 12px;
+            background: #1e293b;
+            border: 2px solid #334155;
+            border-radius: 8px;
+            color: #94a3b8;
+            font-size: 0.85em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            border-color: #3b82f6;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 15px 1%;
+            margin-bottom: 1%;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 24px rgba(59, 130, 246, 0.2);
+            border-color: #3b82f6;
+        }
+
+        .card-header {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #60a5fa;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .card-content {
+            color: #cbd5e1;
+            font-size: 0.9em;
+        }
+
+        .task-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .task-list li {
+            padding: 10px;
+            margin-bottom: 8px;
+            background: rgba(51, 65, 85, 0.5);
+            border-left: 3px solid #3b82f6;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .task-list li:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-left-color: #8b5cf6;
+            transform: translateX(5px);
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+            margin: 10px 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            margin: 4px;
+            border: 1px solid #3b82f6;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            margin-top: 1%;
+            color: #64748b;
+            font-size: 0.8em;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 8px;
+            border: 1px solid #334155;
+        }
+
+        .tip-box {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid #10b981;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #ef4444;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        strong {
+            color: #60a5fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🇵🇭 Filipino Tech VA Guide 2026</h1>
+            <div class="subtitle">Complete Virtual Assistant Instructions & Best Practices</div>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="showTab('start')">Start</button>
+            <button class="tab-btn" onclick="showTab('tasks')">Tasks</button>
+            <button class="tab-btn" onclick="showTab('tools')">Tools</button>
+            <button class="tab-btn" onclick="showTab('tech')">Tech Skills</button>
+            <button class="tab-btn" onclick="showTab('industry')">Industries</button>
+            <button class="tab-btn" onclick="showTab('money')">Money</button>
+            <button class="tab-btn" onclick="showTab('clients')">Find Work</button>
+            <button class="tab-btn" onclick="showTab('comms')">Comms</button>
+            <button class="tab-btn" onclick="showTab('emergency')">Emergency</button>
+            <button class="tab-btn" onclick="showTab('legal')">Legal</button>
+            <button class="tab-btn" onclick="showTab('tips')">Tips</button>
+        </div>
+
+        <!-- START SECTION -->
+        <div id="start" class="content-section active">
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Welcome Filipino Tech VA!</div>
+                <div class="card-content">
+                    <p>You're joining the forefront of 2026 remote work. This guide covers everything you need to excel as a Filipino Tech Virtual Assistant.</p>
+                    <div class="highlight"><strong>Core Duties:</strong> Admin support, tech assistance, project coordination, client communication, digital marketing.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Essential Setup</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li><strong>Internet:</strong> 25+ Mbps download, backup connection ready</li>
+                        <li><strong>Hardware:</strong> Updated PC/laptop, noise-canceling headset, webcam</li>
+                        <li><strong>Workspace:</strong> Quiet area, professional video background</li>
+                        <li><strong>Schedule:</strong> Align hours with client timezone</li>
+                        <li><strong>Security:</strong> VPN, password manager, 2FA everywhere</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Filipino VA Advantages</div>
+                <div class="card-content">
+                    <div class="tag">Excellent English</div><div class="tag">Tech-Savvy</div><div class="tag">Cultural Adaptability</div>
+                    <div class="tag">Strong Work Ethic</div><div class="tag">Cost-Effective</div><div class="tag">Reliable</div>
+                    <p style="margin-top:12px;">Leverage these to build long-term relationships and grow your career!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TASKS SECTION -->
+        <div id="tasks" class="content-section">
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Morning Routine</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li>Check urgent emails and messages</li>
+                        <li>Review calendar for meetings/deadlines</li>
+                        <li>Update task board priorities</li>
+                        <li>Check project status updates</li>
+                        <li>Send morning report (if required)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Daily Core Tasks</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li><strong>Email:</strong> Sort, prioritize, respond, flag important</li>
+                        <li><strong>Calendar:</strong> Schedule meetings, send reminders, coordinate timezones</li>
+                        <li><strong>Data Entry:</strong> Update CRM, spreadsheets, databases</li>
+                        <li><strong>Research:</strong> Market data, competitors, trends</li>
+                        <li><strong>Social Media:</strong> Schedule posts, engage, monitor analytics</li>
+                        <li><strong>Support:</strong> Answer inquiries via email/chat/tickets</li>
+                        <li><strong>Documents:</strong> Create reports, presentations, proposals</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> End-of-Day Routine</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li>Send EOD report with completed tasks</li>
+                        <li>Update time tracking tools</li>
+                        <li>Clear or flag pending inbox items</li>
+                        <li>Backup files to cloud</li>
+                        <li>Set next day reminders</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- TOOLS SECTION -->
+        <div id="tools" class="content-section">
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Essential Software</div>
+                <div class="card-content">
+                    <div class="tip-box"><strong>Pro Tip:</strong> Master 3-5 tools per category to boost marketability.</div>
+                    <p><strong>Communication:</strong></p>
+                    <div class="tag">Slack</div><div class="tag">Zoom</div><div class="tag">MS Teams</div><div class="tag">Google Meet</div>
+                    <p style="margin-top:15px;"><strong>Project Management:</strong></p>
+                    <div class="tag">Asana</div><div class="tag">Trello</div><div class="tag">Monday</div><div class="tag">ClickUp</div><div class="tag">Notion</div>
+                    <p style="margin-top:15px;"><strong>Productivity:</strong></p>
+                    <div class="tag">Google Workspace</div><div class="tag">MS 365</div><div class="tag">Calendly</div><div class="tag">Loom</div><div class="tag">Grammarly</div>
+                    <p style="margin-top:15px;"><strong>Design:</strong></p>
+                    <div class="tag">Canva</div><div class="tag">Figma</div><div class="tag">Adobe Express</div><div class="tag">CapCut</div>
+                    <p style="margin-top:15px;"><strong>CRM:</strong></p>
+                    <div class="tag">HubSpot</div><div class="tag">Salesforce</div><div class="tag">Zoho</div><div class="tag">Pipedrive</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> AI Tools 2026</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li><strong>ChatGPT/Claude:</strong> Content, emails, research</li>
+                        <li><strong>Jasper/Copy.ai:</strong> Marketing copy, social content</li>
+                        <li><strong>Notion AI:</strong> Notes, documentation</li>
+                        <li><strong>Otter.ai:</strong> Meeting transcripts, summaries</li>
+                        <li><strong>Midjourney/DALL-E:</strong> Visual content</li>
+                    </ul>
+                    <div class="warning-box"><strong>Important:</strong> Always review AI content. Never share client secrets with AI tools without permission.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TECH SKILLS SECTION -->
+        <div id="tech" class="content-section">
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> HTML & CSS Basics</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li><strong>Why:</strong> Edit websites, fix formatting, create email templates</li>
+                        <li><strong>Learn:</strong> HTML tags (div, p, h1, a, img), CSS (colors, fonts)</li>
+                        <li><strong>Use:</strong> Update pages, format newsletters</li>
+                        <li><strong>Time:</strong> 2-4 weeks for basics</li>
+                    </ul>
+                    <div class="highlight"><strong>Quick Win:</strong> Learn to change text, images, colors. Covers 80% of requests!</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> WordPress Essentials</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li>Create/edit posts, pages, media</li>
+                        <li>Install plugins (Yoast, Contact Form 7)</li>
+                        <li>Customize themes with page builders (Elementor, Divi)</li>
+                        <li>Updates, backups, basic security</li>
+                        <li>SEO: meta descriptions, alt tags, permalinks</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> File Management</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li><strong>Organization:</strong> Clear folders, consistent naming</li>
+                        <li><strong>Google Drive:</strong> Permissions, folders, version history</li>
+                        <li><strong>Dropbox:</strong> File requests, shared folders</li>
+                        <li><strong>OneDrive:</strong> SharePoint basics</li>
+                        <li><strong>Large Files:</strong> WeTransfer for 25MB+</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- INDUSTRY SECTION -->
+        <div id="industry" class="content-section">
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> E-commerce VA</div>
+                <div class="card-content">
+                    <p><strong>Shopify:</strong> Product listings, inventory, orders, customer service</p>
+                    <p><strong>Amazon:</strong> Product research, listing optimization, FBA, reviews</p>
+                    <p><strong>eBay:</strong> Listings, shipping, disputes, feedback</p>
+                    <div class="tag">Shopify</div><div class="tag">WooCommerce</div><div class="tag">Amazon</div><div class="tag">eBay</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Real Estate VA</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li>Lead generation, skip tracing</li>
+                        <li>CRM management (Podio, Follow Up Boss)</li>
+                        <li>Cold calling/texting</li>
+                        <li>MLS data entry</li>
+                        <li>Transaction coordination</li>
+                        <li>Marketing: flyers, social posts</li>
+                    </ul>
+                    <div class="tip-box"><strong>High Demand:</strong> $8-$15/hour with experience!</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Bookkeeping VA</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li>Record income/expenses</li>
+                        <li>Create/send invoices</li>
+                        <li>Bill payment tracking</li>
+                        <li>Bank reconciliation</li>
+                        <li>Financial reports</li>
+                    </ul>
+                    <div class="tag">QuickBooks</div><div class="tag">Xero</div><div class="tag">FreshBooks</div>
+                    <div class="tip-box"><strong>High Value:</strong> $12-$25/hour. Worth learning!</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Medical/Healthcare VA</div>
+                <div class="card-content">
+                    <div class="warning-box"><strong>HIPAA Compliance:</strong> Never share patient info. One violation = career over!</div>
+                    <ul class="task-list">
+                        <li><strong>Transcription:</strong> Audio to written documents</li>
+                        <li><strong>Scheduling:</strong> Patient appointments</li>
+                        <li><strong>Insurance:</strong> Verify coverage, benefits</li>
+                        <li><strong>Billing:</strong> Submit claims, follow up</li>
+                        <li><strong>Records:</strong> Update EHR systems</li>
+                        <li><strong>Telemedicine:</strong> Virtual appointment setup</li>
+                    </ul>
+                    <div class="tag">Epic</div><div class="tag">Cerner</div><div class="tag">Kareo</div>
+                    <p style="margin-top:10px;"><strong>Requirements:</strong> Medical terminology, HIPAA cert | Rates: $10-$20/hr</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Legal VA</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li><strong>Documents:</strong> Format contracts, briefs</li>
+                        <li><strong>Case Management:</strong> Track deadlines, court dates</li>
+                        <li><strong>Research:</strong> Basic case law research</li>
+                        <li><strong>Client Comms:</strong> Intake calls, follow-ups</li>
+                        <li><strong>Court Filing:</strong> E-filing documents</li>
+                        <li><strong>Billing:</strong> Time tracking, invoices</li>
+                    </ul>
+                    <div class="tag">Clio</div><div class="tag">MyCase</div><div class="tag">PracticePanther</div>
+                    <div class="warning-box"><strong>Important:</strong> You assist lawyers, NOT practice law!</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Podcast/YouTube VA</div>
+                <div class="card-content">
+                    <p><strong>Podcast Support:</strong></p>
+                    <ul class="task-list">
+                        <li>Guest research and outreach</li>
+                        <li>Interview scheduling</li>
+                        <li>Show notes from transcripts</li>
+                        <li>Basic audio editing</li>
+                        <li>Upload to Buzzsprout/Anchor</li>
+                        <li>Social media clips and promotion</li>
+                    </ul>
+                    <p style="margin-top:10px;"><strong>YouTube:</strong></p>
+                    <ul class="task-list">
+                        <li>Video upload & optimization</li>
+                        <li>Thumbnail creation</li>
+                        <li>Comment moderation</li>
+                        <li>Analytics tracking</li>
+                        <li>Shorts/Reels from long-form</li>
+                    </ul>
+                    <div class="tag">Descript</div><div class="tag">CapCut</div><div class="tag">TubeBuddy</div><div class="tag">VidIQ</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Social Media Management</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li><strong>Content Calendar:</strong> Plan 2-4 weeks ahead</li>
+                        <li><strong>Creation:</strong> Graphics, captions, hashtags</li>
+                        <li><strong>Scheduling:</strong> Buffer, Hootsuite, native tools</li>
+                        <li><strong>Community:</strong> Respond to comments/DMs</li>
+                        <li><strong>Analytics:</strong> Weekly/monthly reports</li>
+                        <li><strong>Trends:</strong> Stay current with updates</li>
+                        <li><strong>Paid Ads:</strong> Basic Facebook/IG ads</li>
+                    </ul>
+                    <div class="tag">Instagram</div><div class="tag">Facebook</div><div class="tag">TikTok</div><div class="tag">LinkedIn</div>
+                    <div class="highlight"><strong>Best:</strong> Specialize in 2-3 platforms, not all!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MONEY SECTION -->
+        <div id="money" class="content-section">
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Payment Platforms</div>
+                <div class="card-content">
+                    <div class="highlight"><strong>PayPal:</strong> Most common ✓ | High fees 4-5% ✗</div>
+                    <div class="highlight"><strong>Wise:</strong> Best rates ✓ Low fees 0.5-1% ✓ | 1-2 days ✗</div>
+                    <div class="highlight"><strong>Payoneer:</strong> Marketplace friendly ✓ | 2-3% fees ✗</div>
+                    <div class="highlight"><strong>Bank Transfer:</strong> Lowest fees ✓ | Share bank details ✗</div>
+                    <div class="highlight"><strong>Crypto (USDT):</strong> Fast, low fees ✓ | Requires knowledge ✗</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> 2026 VA Rates</div>
+                <div class="card-content">
+                    <p><strong>Entry (0-1 year):</strong> $3-$6/hr | $400-$800/mo</p>
+                    <p><strong>Intermediate (1-3 years):</strong> $6-$12/hr | $800-$1,500/mo</p>
+                    <p><strong>Advanced (3+ years):</strong> $12-$25/hr | $1,500-$3,000+/mo</p>
+                    <div class="warning-box"><strong>Red Flag:</strong> $2/hour or less = problematic clients</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Philippine Tax Basics</div>
+                <div class="card-content">
+                    <div class="warning-box"><strong>Disclaimer:</strong> Not tax advice. Consult Filipino accountant!</div>
+                    <ul class="task-list">
+                        <li><strong>Income Tax:</strong> File annual BIR Form 1701</li>
+                        <li><strong>BIR Registration:</strong> Once earning regularly</li>
+                        <li><strong>Records:</strong> Track all income & expenses</li>
+                        <li><strong>Quarterly:</strong> May need quarterly estimated taxes</li>
+                        <li><strong>Rate:</strong> Progressive 0-35% based on bracket</li>
+                        <li><strong>Deductions:</strong> Home office, internet, equipment</li>
+                    </ul>
+                    <div class="highlight"><strong>Pro Tip:</strong> Set aside 20-30% of income for taxes!</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Invoicing</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li>Your name and contact</li>
+                        <li>Client details</li>
+                        <li>Invoice number and date</li>
+                        <li>Services with hours/rates</li>
+                        <li>Total amount due</li>
+                        <li>Payment terms and method</li>
+                    </ul>
+                    <div class="tag">Wave</div><div class="tag">PayPal</div><div class="tag">QuickBooks</div>
+                    <div class="highlight"><strong>Payment Terms:</strong> New clients: 50% upfront | Weekly: Net 3 | Monthly: Net 7-15</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FIND WORK SECTION -->
+        <div id="clients" class="content-section">
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Where to Find Clients</div>
+                <div class="card-content">
+                    <div class="highlight"><strong>Upwork:</strong> Largest platform ✓ | High competition, 10-20% fees ✗</div>
+                    <div class="highlight"><strong>Onlinejobs.ph:</strong> Filipino-focused ✓ Direct hiring ✓</div>
+                    <div class="highlight"><strong>LinkedIn:</strong> High-quality clients ✓ | Requires networking ✗</div>
+                    <div class="tag">Fiverr</div><div class="tag">Freelancer</div><div class="tag">PeoplePerHour</div><div class="tag">Remote.co</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Winning Profile</div>
+                <div class="card-content">
+                    <p><strong>Photo:</strong> Professional headshot, smile, plain background</p>
+                    <p><strong>Headline Example:</strong> "Tech VA for Busy Entrepreneurs | 5+ Years | Expert in Asana & HubSpot"</p>
+                    <p><strong>Bio:</strong> Hook → Skills → Experience → Call-to-action (150-300 words)</p>
+                    <div class="tip-box"><strong>Keywords:</strong> Use terms clients search for!</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Writing Proposals</div>
+                <div class="card-content">
+                    <div class="highlight"><strong>1. Personalized Greeting</strong> - Use client's name</div>
+                    <div class="highlight"><strong>2. Hook</strong> - Show you understand their problem</div>
+                    <div class="highlight"><strong>3. Relevant Experience</strong> - Specific skills/accomplishments</div>
+                    <div class="highlight"><strong>4. Your Solution</strong> - How you'll help them</div>
+                    <div class="highlight"><strong>5. Call to Action</strong> - "When can we discuss?"</div>
+                    <div class="tip-box"><strong>Golden Rule:</strong> Always customize. No templates!</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Client Red Flags</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li>🚩 Extremely low rates ($2/hr or less)</li>
+                        <li>🚩 Vague job, unrealistic expectations</li>
+                        <li>🚩 Requests work before payment setup</li>
+                        <li>🚩 Poor communication during hiring</li>
+                        <li>🚩 No clear scope, wants everything cheap</li>
+                        <li>🚩 Refuses escrow/payment protection</li>
+                        <li>🚩 Disrespectful tone</li>
+                        <li>🚩 History of bad reviews</li>
+                    </ul>
+                    <div class="tip-box"><strong>Green Flags:</strong> Clear job description, reasonable rates, good communication, uses contracts</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMMUNICATION SECTION -->
+        <div id="comms" class="content-section">
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Communication Standards</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li><strong>Response Time:</strong> 2-4 hours during work hours</li>
+                        <li><strong>Tone:</strong> Professional yet friendly</li>
+                        <li><strong>Clarity:</strong> Clear, concise language</li>
+                        <li><strong>Updates:</strong> Proactive progress reports</li>
+                        <li><strong>Questions:</strong> Ask for clarification when needed</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Email Best Practices</div>
+                <div class="card-content">
+                    <div class="highlight">
+                        <strong>Subject:</strong> Clear and specific<br>
+                        <strong>Greeting:</strong> Use preferred name/title<br>
+                        <strong>Body:</strong> Purpose → Details → Action items<br>
+                        <strong>Closing:</strong> Professional sign-off
+                    </div>
+                    <div class="tip-box"><strong>Filipino Touch:</strong> Your natural warmth is an asset. Stay professional but personable.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Timezone Management</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li>Clarify client timezone and hours</li>
+                        <li>Use World Time Buddy for scheduling</li>
+                        <li>Set multiple timezone clocks</li>
+                        <li>Schedule emails for client business hours</li>
+                        <li>Be flexible for occasional off-hours</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- EMERGENCY SECTION -->
+        <div id="emergency" class="content-section">
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Internet Outage Protocol</div>
+                <div class="card-content">
+                    <div class="warning-box"><strong>Reality:</strong> PH power/internet outages are common. Being prepared = professional!</div>
+                    <p><strong>Immediate Actions:</strong></p>
+                    <ul class="task-list">
+                        <li>Check if neighborhood-wide</li>
+                        <li>Restart router/modem (30 sec unplug)</li>
+                        <li>Check ISP social media</li>
+                        <li>Switch to backup immediately</li>
+                    </ul>
+                    <p style="margin-top:10px;"><strong>Backups:</strong></p>
+                    <div class="highlight">Mobile hotspot (10GB+ data ₱500-1k/mo) | Secondary ISP (₱1.5-2k/mo) | Coworking space (₱200-500/day) | Friend/family backup</div>
+                    <p style="margin-top:10px;"><strong>Notify Client:</strong> "Internet outage. Switching to backup. Online in 10-15 min."</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Power Outage Solutions</div>
+                <div class="card-content">
+                    <div class="highlight"><strong>UPS:</strong> 1000VA minimum (30-60 min backup) ₱3,000-8,000 - Essential investment!</div>
+                    <div class="highlight"><strong>Laptop:</strong> Built-in 3-6 hour battery</div>
+                    <div class="highlight"><strong>Power Bank:</strong> 20,000mAh for phone hotspot ₱1,000-2,000</div>
+                    <p style="margin-top:10px;"><strong>Extended Outages:</strong></p>
+                    <ul class="task-list">
+                        <li>Under 1hr: Laptop + mobile hotspot</li>
+                        <li>1-3hrs: Coworking/cafe with generator</li>
+                        <li>3+ hrs: Notify client, work offline</li>
+                        <li>All day: Take leave, notify early AM</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> PH-Specific Considerations</div>
+                <div class="card-content">
+                    <p><strong>Best Internet Providers:</strong></p>
+                    <div class="tag">PLDT Fibr</div><div class="tag">Converge</div><div class="tag">Globe Fiber</div>
+                    <p style="margin-top:10px;"><strong>Typhoon Season (June-Nov):</strong></p>
+                    <ul class="task-list">
+                        <li>Inform clients you may have weather disruptions</li>
+                        <li>Message before typhoon: "Storm approaching, may lose power/internet"</li>
+                        <li>Safety first - clients understand</li>
+                    </ul>
+                    <p style="margin-top:10px;"><strong>PH Holidays to Communicate:</strong></p>
+                    <ul class="task-list">
+                        <li>New Year, Holy Week, Christmas (Dec 24-26)</li>
+                        <li>Let clients know 2 weeks in advance</li>
+                        <li>Offer alternative work dates if needed</li>
+                    </ul>
+                    <p style="margin-top:10px;"><strong>Load Management:</strong></p>
+                    <ul class="task-list">
+                        <li>During brownouts, have UPS ready</li>
+                        <li>Keep mobile data loaded (emergency backup)</li>
+                        <li>Know which areas have generators (malls, coworking)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Equipment Failure</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li>Keep old laptop as backup</li>
+                        <li>All files in cloud (auto-sync)</li>
+                        <li>Password manager for logins</li>
+                        <li>Message client immediately via phone</li>
+                        <li>Use backup device or internet cafe</li>
+                        <li>Get same-day repair if possible</li>
+                    </ul>
+                    <div class="warning-box"><strong>Prevention:</strong> ₱1k backup hard drive cheaper than ₱10k data recovery!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEGAL SECTION -->
+        <div id="legal" class="content-section">
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Service Agreement Must-Haves</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li><strong>Scope:</strong> Services included/excluded, hours</li>
+                        <li><strong>Payment:</strong> Rate, schedule, method, late fees</li>
+                        <li><strong>Schedule:</strong> Work hours, timezone, holidays</li>
+                        <li><strong>Termination:</strong> Notice period (2-4 weeks)</li>
+                        <li><strong>Confidentiality:</strong> NDA terms</li>
+                        <li><strong>IP Rights:</strong> Who owns deliverables</li>
+                    </ul>
+                    <div class="tip-box"><strong>Templates:</strong> Bonsai, HoneyBook, Docracy (free)</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> DTI & BIR Registration</div>
+                <div class="card-content">
+                    <p><strong>DTI Business Name:</strong> ₱500-700 for 5 years (online at dti.gov.ph)</p>
+                    <p><strong>BIR:</strong> Register as self-employed, get TIN, file annual tax</p>
+                    <p><strong>Mayor's Permit:</strong> Usually not needed for home-based VAs</p>
+                    <div class="tip-box"><strong>Pro Tip:</strong> Start with DTI, then BIR when earning consistently.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Freelancer Rights in PH</div>
+                <div class="card-content">
+                    <div class="highlight"><strong>You Are NOT an Employee:</strong> No SSS/PhilHealth from client, no 13th month, no paid leave. But you have freedom!</div>
+                    <ul class="task-list">
+                        <li><strong>Set Rates:</strong> You determine pricing</li>
+                        <li><strong>Refuse Work:</strong> Can say no to projects</li>
+                        <li><strong>Payment:</strong> Must be paid for completed work</li>
+                        <li><strong>Multiple Clients:</strong> Work for many simultaneously</li>
+                        <li><strong>Work Location:</strong> You choose where</li>
+                    </ul>
+                    <p style="margin-top:10px;"><strong>Your Responsibilities:</strong> Pay own taxes, provide equipment, handle own benefits</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Handling Disputes</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li><strong>Step 1:</strong> Direct professional communication</li>
+                        <li><strong>Step 2:</strong> Written warning with deadline</li>
+                        <li><strong>Step 3:</strong> Platform mediation (Upwork, Fiverr)</li>
+                        <li><strong>Step 4:</strong> Legal action (last resort, consider costs)</li>
+                    </ul>
+                    <div class="tip-box"><strong>Reality:</strong> Sometimes better to move on than pursue legal action. Focus on better clients!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TIPS SECTION -->
+        <div id="tips" class="content-section">
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Professional Growth</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li>Take online courses (Coursera, Udemy, LinkedIn Learning)</li>
+                        <li>Get certified in client tools</li>
+                        <li>Develop industry expertise</li>
+                        <li>Join Filipino VA communities</li>
+                        <li>Maintain updated portfolio</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Advanced Automation</div>
+                <div class="card-content">
+                    <p><strong>Zapier/Make Basics:</strong></p>
+                    <ul class="task-list">
+                        <li>Connect apps to automate workflows</li>
+                        <li>Auto-create tasks from emails</li>
+                        <li>Save email attachments to Drive automatically</li>
+                        <li>Post to social media from one place</li>
+                        <li>Sync data between CRM and spreadsheets</li>
+                    </ul>
+                    <p style="margin-top:10px;"><strong>Email Automation:</strong></p>
+                    <ul class="task-list">
+                        <li>Create filters and rules</li>
+                        <li>Auto-label incoming emails</li>
+                        <li>Set up canned responses</li>
+                        <li>Schedule send for optimal times</li>
+                    </ul>
+                    <p style="margin-top:10px;"><strong>Template Creation:</strong></p>
+                    <ul class="task-list">
+                        <li>Email templates for common responses</li>
+                        <li>Document templates in Google Docs</li>
+                        <li>Social media post templates in Canva</li>
+                        <li>Report templates with auto-updating data</li>
+                    </ul>
+                    <div class="tip-box"><strong>Pro Tip:</strong> Automation = work smarter, earn more per hour!</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Mental Health & Burnout Prevention</div>
+                <div class="card-content">
+                    <p><strong>Signs of Burnout:</strong></p>
+                    <ul class="task-list">
+                        <li>Constant exhaustion, even after rest</li>
+                        <li>Dreading work, loss of motivation</li>
+                        <li>Irritability with clients/family</li>
+                        <li>Decreased productivity, more mistakes</li>
+                        <li>Physical symptoms (headaches, insomnia)</li>
+                    </ul>
+                    <p style="margin-top:10px;"><strong>Prevention Strategies:</strong></p>
+                    <ul class="task-list">
+                        <li><strong>Boundaries:</strong> Set clear work hours, stick to them</li>
+                        <li><strong>Breaks:</strong> Regular breaks, actual lunch away from desk</li>
+                        <li><strong>Say No:</strong> Don't overcommit. Quality > quantity</li>
+                        <li><strong>Raise Rates:</strong> Better to work less at higher rate</li>
+                        <li><strong>Time Off:</strong> Schedule regular days off</li>
+                        <li><strong>Support:</strong> Join VA communities, share challenges</li>
+                    </ul>
+                    <p style="margin-top:10px;"><strong>When to Fire Toxic Clients:</strong></p>
+                    <ul class="task-list">
+                        <li>Constantly disrespectful or abusive</li>
+                        <li>Unreasonable demands, scope creep</li>
+                        <li>Late payments repeatedly</li>
+                        <li>Affects your mental/physical health</li>
+                        <li>Makes you dread working</li>
+                    </ul>
+                    <div class="warning-box"><strong>Remember:</strong> No client is worth your health. Better to earn less and be happy than burn out!</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Data Security</div>
+                <div class="card-content">
+                    <div class="warning-box"><strong>Critical:</strong> One data breach can end your career!</div>
+                    <ul class="task-list">
+                        <li>Strong, unique passwords per client</li>
+                        <li>Enable 2FA everywhere</li>
+                        <li>Never share client info</li>
+                        <li>Use secure file transfer (encrypted)</li>
+                        <li>VPN on public WiFi</li>
+                        <li>Honor all NDAs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Work-Life Balance</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li>Set clear work/personal boundaries</li>
+                        <li>Pomodoro: 25 min work, 5 min break</li>
+                        <li>Ergonomic workspace, good posture</li>
+                        <li>Stay hydrated, eat regular meals</li>
+                        <li>Exercise during breaks</li>
+                        <li>Communicate availability clearly</li>
+                    </ul>
+                    <div class="tip-box"><strong>Remember:</strong> Well-rested VA = Productive VA!</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Success Metrics</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li><strong>Response Time:</strong> Avg time to reply</li>
+                        <li><strong>Completion Rate:</strong> % tasks on time</li>
+                        <li><strong>Client Satisfaction:</strong> Feedback scores</li>
+                        <li><strong>Accuracy:</strong> Error-free work %</li>
+                        <li><strong>Productivity:</strong> Tasks per hour/day</li>
+                        <li><strong>Retention:</strong> Client longevity</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="money" class="content-section">
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Payment Platforms</div>
+                <div class="card-content">
+                    <div class="highlight"><strong>PayPal:</strong> Most common ✓ | High fees 4-5% ✗</div>
+                    <div class="highlight"><strong>Wise:</strong> Best rates ✓ Low fees 0.5-1% ✓ | 1-2 days ✗</div>
+                    <div class="highlight"><strong>Payoneer:</strong> Marketplace friendly ✓ | 2-3% fees ✗</div>
+                    <div class="highlight"><strong>Bank Transfer:</strong> Lowest fees ✓ | Share bank details ✗</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> 2026 VA Rates</div>
+                <div class="card-content">
+                    <p><strong>Entry (0-1 year):</strong> $3-$6/hr | $400-$800/mo</p>
+                    <p><strong>Intermediate (1-3 years):</strong> $6-$12/hr | $800-$1,500/mo</p>
+                    <p><strong>Advanced (3+ years):</strong> $12-$25/hr | $1,500-$3,000+/mo</p>
+                    <div class="warning-box"><strong>Red Flag:</strong> $2/hour or less = problematic clients</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Invoicing</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li>Your name and contact</li>
+                        <li>Client details</li>
+                        <li>Invoice number and date</li>
+                        <li>Services with hours/rates</li>
+                        <li>Total amount due</li>
+                        <li>Payment terms and method</li>
+                    </ul>
+                    <div class="tag">Wave</div><div class="tag">PayPal</div><div class="tag">QuickBooks</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FIND WORK SECTION -->
+        <div id="clients" class="content-section">
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Where to Find Clients</div>
+                <div class="card-content">
+                    <div class="highlight"><strong>Upwork:</strong> Largest platform ✓ | High competition, 10-20% fees ✗</div>
+                    <div class="highlight"><strong>Onlinejobs.ph:</strong> Filipino-focused ✓ Direct hiring ✓</div>
+                    <div class="highlight"><strong>LinkedIn:</strong> High-quality clients ✓ | Requires networking ✗</div>
+                    <div class="tag">Fiverr</div><div class="tag">Freelancer</div><div class="tag">PeoplePerHour</div><div class="tag">Remote.co</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Winning Profile</div>
+                <div class="card-content">
+                    <p><strong>Photo:</strong> Professional headshot, smile, plain background</p>
+                    <p><strong>Headline Example:</strong> "Tech VA for Busy Entrepreneurs | 5+ Years | Expert in Asana & HubSpot"</p>
+                    <p><strong>Bio:</strong> Hook → Skills → Experience → Call-to-action (150-300 words)</p>
+                    <div class="tip-box"><strong>Keywords:</strong> Use terms clients search for!</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Client Red Flags</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li>🚩 Extremely low rates ($2/hr or less)</li>
+                        <li>🚩 Vague job, unrealistic expectations</li>
+                        <li>🚩 Requests work before payment setup</li>
+                        <li>🚩 Poor communication during hiring</li>
+                        <li>🚩 No clear scope, wants everything cheap</li>
+                        <li>🚩 Refuses escrow/payment protection</li>
+                        <li>🚩 Disrespectful tone</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMMUNICATION SECTION -->
+        <div id="comms" class="content-section">
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Communication Standards</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li><strong>Response Time:</strong> 2-4 hours during work hours</li>
+                        <li><strong>Tone:</strong> Professional yet friendly</li>
+                        <li><strong>Clarity:</strong> Clear, concise language</li>
+                        <li><strong>Updates:</strong> Proactive progress reports</li>
+                        <li><strong>Questions:</strong> Ask for clarification when needed</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Email Best Practices</div>
+                <div class="card-content">
+                    <div class="highlight">
+                        <strong>Subject:</strong> Clear and specific<br>
+                        <strong>Greeting:</strong> Use preferred name/title<br>
+                        <strong>Body:</strong> Purpose → Details → Action items<br>
+                        <strong>Closing:</strong> Professional sign-off
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Timezone Management</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li>Clarify client timezone and hours</li>
+                        <li>Use World Time Buddy for scheduling</li>
+                        <li>Set multiple timezone clocks</li>
+                        <li>Schedule emails for client business hours</li>
+                        <li>Be flexible for occasional off-hours</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- EMERGENCY SECTION -->
+        <div id="emergency" class="content-section">
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Internet Outage Protocol</div>
+                <div class="card-content">
+                    <p><strong>Immediate Actions:</strong></p>
+                    <ul class="task-list">
+                        <li>Check if neighborhood-wide</li>
+                        <li>Restart router/modem (30 sec unplug)</li>
+                        <li>Check ISP social media</li>
+                        <li>Switch to backup immediately</li>
+                    </ul>
+                    <p><strong>Backups:</strong></p>
+                    <div class="highlight">Mobile hotspot (10GB+ data) | Secondary ISP | Coworking space | Friend/family backup</div>
+                    <p><strong>Notify Client:</strong> "Internet outage. Switching to backup. Online in 10-15 min."</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Power Outage Solutions</div>
+                <div class="card-content">
+                    <div class="highlight"><strong>UPS:</strong> 1000VA minimum (30-60 min backup) ₱3,000-8,000</div>
+                    <div class="highlight"><strong>Laptop:</strong> Built-in 3-6 hour battery</div>
+                    <div class="highlight"><strong>Power Bank:</strong> 20,000mAh for phone hotspot ₱1,000-2,000</div>
+                    <p><strong>Extended Outages:</strong></p>
+                    <ul class="task-list">
+                        <li>Under 1hr: Use laptop + mobile hotspot</li>
+                        <li>1-3hrs: Move to coworking/cafe</li>
+                        <li>3+ hrs: Notify client, work offline</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Equipment Failure</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li>Keep old laptop as backup</li>
+                        <li>All files in cloud (auto-sync)</li>
+                        <li>Password manager for logins</li>
+                        <li>Message client immediately via phone</li>
+                        <li>Use backup device or internet cafe</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEGAL SECTION -->
+        <div id="legal" class="content-section">
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Service Agreement Must-Haves</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li><strong>Scope:</strong> Services included/excluded, hours</li>
+                        <li><strong>Payment:</strong> Rate, schedule, method, late fees</li>
+                        <li><strong>Schedule:</strong> Work hours, timezone, holidays</li>
+                        <li><strong>Termination:</strong> Notice period (2-4 weeks)</li>
+                        <li><strong>Confidentiality:</strong> NDA terms</li>
+                        <li><strong>IP Rights:</strong> Who owns deliverables</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> DTI & BIR Registration</div>
+                <div class="card-content">
+                    <p><strong>DTI Business Name:</strong> ₱500-700 for 5 years (online at dti.gov.ph)</p>
+                    <p><strong>BIR:</strong> Register as self-employed, get TIN, file annual tax</p>
+                    <p><strong>Mayor's Permit:</strong> Usually not needed for home-based VAs</p>
+                    <div class="tip-box"><strong>Pro Tip:</strong> Start with DTI, then BIR when earning consistently.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> NDA Guidelines</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li>Read completely before signing</li>
+                        <li>Check duration isn't excessive</li>
+                        <li>Ensure doesn't prevent working in field</li>
+                        <li>Ask questions if unclear</li>
+                    </ul>
+                    <div class="warning-box"><strong>Red Flags:</strong> Lifetime confidentiality, prevents competitor work forever</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TIPS SECTION -->
+        <div id="tips" class="content-section">
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Professional Growth</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li>Take online courses (Coursera, Udemy, LinkedIn Learning)</li>
+                        <li>Get certified in client tools</li>
+                        <li>Develop industry expertise</li>
+                        <li>Join Filipino VA communities</li>
+                        <li>Maintain updated portfolio</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Data Security</div>
+                <div class="card-content">
+                    <div class="warning-box"><strong>Critical:</strong> One data breach can end your career!</div>
+                    <ul class="task-list">
+                        <li>Strong, unique passwords per client</li>
+                        <li>Enable 2FA everywhere</li>
+                        <li>Never share client info</li>
+                        <li>Use secure file transfer (encrypted)</li>
+                        <li>VPN on public WiFi</li>
+                        <li>Honor all NDAs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Work-Life Balance</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li>Set clear work/personal boundaries</li>
+                        <li>Pomodoro: 25 min work, 5 min break</li>
+                        <li>Ergonomic workspace, good posture</li>
+                        <li>Stay hydrated, eat regular meals</li>
+                        <li>Exercise during breaks</li>
+                        <li>Communicate availability clearly</li>
+                    </ul>
+                    <div class="tip-box"><strong>Remember:</strong> Well-rested VA = Productive VA!</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header"><span class="icon"></span> Success Metrics</div>
+                <div class="card-content">
+                    <ul class="task-list">
+                        <li><strong>Response Time:</strong> Avg time to reply</li>
+                        <li><strong>Completion Rate:</strong> % tasks on time</li>
+                        <li><strong>Client Satisfaction:</strong> Feedback scores</li>
+                        <li><strong>Accuracy:</strong> Error-free work %</li>
+                        <li><strong>Productivity:</strong> Tasks per hour/day</li>
+                        <li><strong>Retention:</strong> Client longevity</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Filipino Tech VA Guide 2026</strong></p>
+            <p>Excellence in Virtual Assistance | Proudly Filipino 🇵🇭</p>
+            <p style="margin-top:8px;font-size:0.75em;">Stay updated, stay professional, stay ahead</p>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
